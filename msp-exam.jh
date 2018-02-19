@@ -1,0 +1,86 @@
+// 题库
+entity ExamQuestionDb {
+	name String, 
+    logo String,
+    status Status,
+    remark String
+}
+
+// 试卷
+entity ExamPager {
+	name String,
+    startTime Date,
+    endTime Date,
+    showTime Date,
+    totalScore Integer,
+    count Integer,
+    duration Integer,
+    userTime Integer,
+    data String
+}
+
+entity ExamPagerCategory {
+	name String,
+    remark String,
+    status Status
+}
+
+// 试题
+entity ExamQuestion {
+ 	type QuestionType,
+	question String,
+    score Float,
+    status Status,
+    content String,
+    key String,
+    resolve String, // 试题解析
+    data String, // 试题模版
+    level Integer // 级别
+}
+
+// 统一试题
+entity ExamExamData {
+	startTime Date,
+    endTime Date,
+    score Integer,
+    status Status,
+    data String,
+    check String
+}
+
+// 自测随机生成的试题
+entity ExamUserTest {
+	name String,
+    duration Integer,
+    totalScore Integer,
+    userScore Integer,
+    paper Blob,
+    answer Blob,
+    check Blob,
+    testdate Date
+}
+
+enum Status {
+    ENABLE, DISABLE
+}
+
+enum QuestionType {
+	SIMPLE, COMBOX
+}
+
+relationship ManyToOne {
+	ExamQuestion{db} to ExamQuestionDb,
+    ExamPager{category} to ExamPagerCategory,
+    ExamExamData{pager} to ExamPager
+}
+
+// Set pagination options
+paginate JobHistory, Employee with infinite-scroll
+paginate Job with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix
