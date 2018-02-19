@@ -41,7 +41,7 @@ spring:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://dev.ctodb.cn:3306/msp-exam?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: root
-        password:
+        password: 123456
         hikari:
             data-source-properties:
                 cachePrepStmts: true
