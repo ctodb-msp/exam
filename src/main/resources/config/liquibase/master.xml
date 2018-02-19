@@ -5,6 +5,15 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180219120437_added_entity_ExamQuestionDb.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180219120438_added_entity_ExamPager.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180219120439_added_entity_ExamPagerCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180219120440_added_entity_ExamQuestion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180219120441_added_entity_ExamExamData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180219120442_added_entity_ExamUserTest.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180219120438_added_entity_constraints_ExamPager.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180219120440_added_entity_constraints_ExamQuestion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180219120441_added_entity_constraints_ExamExamData.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
